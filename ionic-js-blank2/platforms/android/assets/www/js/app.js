@@ -29,8 +29,7 @@ App.run(function ($ionicPlatform) {
 App.controller("FeedCtrl", ['$scope', 'FeedService', function ($scope, Feed) {
 
     var RssSource = 'http://rss.cnn.com/rss/cnn_topstories.rss';
-
-    
+   
         Feed.parseFeed(RssSource).then(function (res) {
             $scope.feeds = res.data.responseData.feed.entries;
         });
